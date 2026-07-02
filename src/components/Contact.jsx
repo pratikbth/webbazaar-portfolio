@@ -52,7 +52,7 @@ export default function Contact() {
               </a>
 
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/pratikbth/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-5 p-5 rounded-2xl bg-white/20 dark:bg-slate-900/20 border border-white/20 dark:border-white/5 text-slate-700 dark:text-slate-300 hover:border-portfolio/30 hover:scale-[1.02] transition-all duration-300 backdrop-blur-lg shadow-lg"
