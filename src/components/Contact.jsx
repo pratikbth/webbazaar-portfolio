@@ -3,13 +3,32 @@ import { Mail, Send } from 'lucide-react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState({ loading: false, success: false, error: null });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setFormData({ name: '', email: '', message: '' });
-    setTimeout(() => setSubmitted(false), 5000);
+    setStatus({ loading: true, success: false, error: null });
+
+    try {
+      const response = await fetch("https://formspree.io/f/xgojpwjr", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        setStatus({ loading: false, success: true, error: null });
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        const data = await response.json();
+        throw new Error(data.error || "Failed to send message. Please try again.");
+      }
+    } catch (err) {
+      setStatus({ loading: false, success: false, error: err.message });
+    }
   };
 
   return (
@@ -131,15 +150,22 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="w-full py-4.5 rounded-2xl bg-portfolio hover:bg-portfolio-dark text-white font-bold flex items-center justify-center gap-2 hover:shadow-xl hover:shadow-portfolio/25 hover:scale-[1.01] active:scale-[0.99] transition-all duration-200 cursor-pointer"
+                disabled={status.loading}
+                className="w-full py-4.5 rounded-2xl bg-portfolio hover:bg-portfolio-dark text-white font-bold flex items-center justify-center gap-2 hover:shadow-xl hover:shadow-portfolio/25 hover:scale-[1.01] active:scale-[0.99] transition-all duration-200 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <span>Send Message</span>
+                <span>{status.loading ? "Sending..." : "Send Message"}</span>
                 <Send className="w-4 h-4" />
               </button>
 
-              {submitted && (
-                <div className="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-sm font-bold text-center animate-pulse">
-                  Thank you! Your message has been received.
+              {status.success && (
+                <div className="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-sm font-bold text-center">
+                  Thanks! I'll get back to you soon.
+                </div>
+              )}
+
+              {status.error && (
+                <div className="p-4 rounded-2xl bg-rose-500/10 border border-rose-500/20 text-rose-600 dark:text-rose-400 text-sm font-bold text-center">
+                  {status.error}
                 </div>
               )}
             </form>
