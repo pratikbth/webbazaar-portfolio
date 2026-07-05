@@ -5,42 +5,48 @@ export default function Skills() {
   const skillGroups = [
     {
       title: "AI / ML",
-      icon: <Cpu className="w-5 h-5 text-portfolio" />,
-      skills: ["Google Gemini Live API", "FLUX & Stable Diffusion APIs", "LLM Fine-Tuning & RAG", "LangChain & Agent Swarms", "Hugging Face"]
+      icon: <Cpu className="w-4 h-4 text-[#00f2fe]" />,
+      skills: ["Google Gemini Live API", "FLUX & Stable Diffusion APIs", "LLM Fine-Tuning & RAG", "LangChain & Agent Swarms", "Hugging Face"],
+      id: "PILL_AI_ML"
     },
     {
       title: "Web Dev",
-      icon: <Globe className="w-5 h-5 text-indigo-500" />,
-      skills: ["React (v18 & v19)", "Vite & CRACO", "Tailwind CSS", "Next.js", "Radix UI Primitives", "HTML5 & CSS3"]
+      icon: <Globe className="w-4 h-4 text-[#743ad5]" />,
+      skills: ["React (v18 & v19)", "Vite & CRACO", "Tailwind CSS", "Next.js", "Radix UI Primitives", "HTML5 & CSS3"],
+      id: "PILL_WEB_DEV"
     },
     {
       title: "Full Stack Developer",
-      icon: <Database className="w-5 h-5 text-rose-500" />,
-      skills: ["FastAPI (Python)", "Node.js & Express", "MongoDB & Motor", "Supabase Client", "REST APIs", "SQL / NoSQL"]
+      icon: <Database className="w-4 h-4 text-[#00f2fe]" />,
+      skills: ["FastAPI (Python)", "Node.js & Express", "MongoDB & Motor", "Supabase Client", "REST APIs", "SQL / NoSQL"],
+      id: "PILL_FULL_STACK"
     },
     {
       title: "Automation",
-      icon: <Workflow className="w-5 h-5 text-webbazaar-emerald" />,
-      skills: ["WhatsApp AI Chatbots", "Python script systems", "Automated PDF/PPT Exporters", "Cron Jobs", "Workflow Pipelines"]
+      icon: <Workflow className="w-4 h-4 text-[#743ad5]" />,
+      skills: ["WhatsApp AI Chatbots", "Python script systems", "Automated PDF/PPT Exporters", "Cron Jobs", "Workflow Pipelines"],
+      id: "PILL_AUTOMATION"
     },
     {
       title: "Tools & DevOps",
-      icon: <PenTool className="w-5 h-5 text-amber-500" />,
-      skills: ["Git & GitHub Desktop", "CLI Heartbeat / Agent tools", "Docker & Railway", "Vercel", "npm / pip / poetry"]
+      icon: <PenTool className="w-4 h-4 text-[#00f2fe]" />,
+      skills: ["Git & GitHub Desktop", "CLI Heartbeat / Agent tools", "Docker & Railway", "Vercel", "npm / pip / poetry"],
+      id: "PILL_DEV_OPS"
     }
   ];
 
   return (
-    <section id="skills" className="py-32 px-6 md:px-16 lg:px-24 bg-slate-100/30 dark:bg-slate-900/10 backdrop-blur-md relative">
-      <div className="max-w-6xl mx-auto">
+    <section id="skills" className="py-32 px-6 md:px-16 lg:px-24 bg-[#131313] text-white relative">
+      <div className="max-w-6xl mx-auto font-mono text-xs">
         {/* Asymmetric Header */}
         <div className="mb-20 text-left">
-          <h2 className="text-4xl sm:text-5xl font-black font-display tracking-tight text-slate-950 dark:text-white mb-4">
-            Skills & <span className="text-transparent bg-clip-text bg-gradient-to-r from-portfolio to-rose-500">Expertise</span>
+          <div className="text-[10px] text-[#00f2fe] mb-2">// TECHNICAL_CAPABILITIES</div>
+          <h2 className="text-4xl sm:text-5xl font-black tracking-tight text-white mb-4 font-sans">
+            Skills & <span className="text-gradient-cyan-magenta">Expertise</span>
           </h2>
-          <div className="w-16 h-1.5 bg-portfolio rounded-full mb-6"></div>
-          <p className="text-slate-600 dark:text-slate-400 text-lg font-light leading-relaxed max-w-xl">
-            A sandbox of APIs, languages, frameworks, and deployment automation platforms.
+          <div className="w-16 h-1 bg-[#00f2fe] mb-6"></div>
+          <p className="text-slate-400 max-w-xl leading-relaxed">
+            A sandbox of APIs, languages, frameworks, and deployment automation platforms configured for production load.
           </p>
         </div>
 
@@ -49,25 +55,27 @@ export default function Skills() {
           {skillGroups.map((group, idx) => (
             <div
               key={idx}
-              className="p-8 rounded-3xl bg-white/20 dark:bg-slate-900/20 border border-white/20 dark:border-white/5 shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 backdrop-blur-lg"
+              className="p-6 rounded-xl glass-void border border-white/5 hover:border-[#00f2fe]/30 hover:scale-[1.01] transition-all duration-300 relative overflow-hidden"
             >
-              <div className="flex items-center gap-3 mb-6 pb-4 border-b border-slate-200/50 dark:border-slate-800/50">
-                <div className="p-2.5 rounded-xl bg-white/50 dark:bg-slate-800/50 text-slate-700 dark:text-slate-300 shadow-inner">
-                  {group.icon}
-                </div>
-                <h3 className="font-extrabold text-lg text-slate-950 dark:text-white">{group.title}</h3>
+              <div className="absolute top-2 right-3 text-[8px] text-slate-600">
+                {group.id}
               </div>
 
-              <div className="flex flex-wrap gap-2">
-                {group.skills.map((skill, sIdx) => (
-                  <span
-                    key={sIdx}
-                    className="text-xs font-semibold px-3 py-2 rounded-xl bg-white/65 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 border border-slate-200/20 dark:border-slate-700/20 shadow-sm"
-                  >
-                    {skill}
-                  </span>
-                ))}
+              <div className="flex items-center gap-3 mb-6 pb-4 border-b border-white/5">
+                <div className="p-2 rounded bg-white/5 border border-white/10 text-[#00f2fe]">
+                  {group.icon}
+                </div>
+                <h3 className="font-extrabold text-sm text-white tracking-tight font-sans">{group.title}</h3>
               </div>
+
+              <ul className="space-y-2">
+                {group.skills.map((skill, sIdx) => (
+                  <li key={sIdx} className="flex items-center gap-2 text-slate-400">
+                    <span className="h-1 w-1 rounded-full bg-[#00f2fe]"></span>
+                    <span>{skill}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
