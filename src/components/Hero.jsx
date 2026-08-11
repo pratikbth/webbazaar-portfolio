@@ -27,7 +27,7 @@ export default function Hero() {
 
           {/* Subtitle */}
           <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-300 mb-8 font-mono tracking-tight">
-            Built by <span className="text-[#00f2fe]">&lt;Pratik (AI) /&gt;</span> & <span className="text-[#743ad5]">&lt;Piyush (Full-Stack) /&gt;</span>
+            Built by <span className="text-[#00f2fe]">&lt;Pratik (AI Engineer) /&gt;</span>
           </h2>
 
           {/* Body */}

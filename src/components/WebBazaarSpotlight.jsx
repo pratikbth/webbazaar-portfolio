@@ -98,12 +98,12 @@ export default function WebBazaarSpotlight() {
           <div className="text-left mb-16">
             <div className="font-mono text-[10px] text-slate-500 mb-2">// AGENCY_ARCHITECTS</div>
             <h3 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tight">
-              Meet the <span className="text-gradient-cyan-magenta">Founders</span>
+              Meet the <span className="text-gradient-cyan-magenta">Founder</span>
             </h3>
             <div className="w-16 h-1 bg-[#00f2fe]"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="max-w-2xl mx-auto">
             {/* Pratik */}
             <div className="flex flex-col sm:flex-row items-center gap-6 p-6 rounded-xl glass-void border border-white/5 hover:border-[#00f2fe]/40 hover:scale-[1.02] transition-all duration-300 relative overflow-hidden group">
               <div className="absolute top-0 right-0 w-24 h-[1px] bg-gradient-to-l from-[#00f2fe] to-transparent"></div>
@@ -124,30 +124,6 @@ export default function WebBazaarSpotlight() {
                 <div className="mt-4 text-[9px] text-slate-600 flex gap-4">
                   <span>STABILITY: 100%</span>
                   <span>CORE: LOAD_OK</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Piyush */}
-            <div className="flex flex-col sm:flex-row items-center gap-6 p-6 rounded-xl glass-void border border-white/5 hover:border-[#743ad5]/40 hover:scale-[1.02] transition-all duration-300 relative overflow-hidden group">
-              <div className="absolute top-0 right-0 w-24 h-[1px] bg-gradient-to-l from-[#743ad5] to-transparent"></div>
-              <img
-                src={piyushImg}
-                alt="Piyush"
-                className="w-20 h-20 rounded-lg object-cover border border-[#743ad5]/30 group-hover:border-glow-magenta transition-all duration-300 shrink-0"
-              />
-              <div className="text-center sm:text-left font-mono">
-                <div className="flex items-center justify-center sm:justify-start gap-2 mb-1">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#743ad5] animate-pulse"></span>
-                  <h4 className="text-base font-bold text-white tracking-tight">Piyush</h4>
-                </div>
-                <div className="text-[10px] font-semibold text-[#743ad5] mb-3 uppercase tracking-wider">// CO_FOUNDER_FULL_STACK_LEAD</div>
-                <p className="text-[11px] text-slate-400 leading-relaxed font-light">
-                  Leads full-stack development — architecting and building the web platforms, CRMs, and applications WebBazaar delivers to clients.
-                </p>
-                <div className="mt-4 text-[9px] text-slate-600 flex gap-4">
-                  <span>THROUGHPUT: HIGH</span>
-                  <span>NODE: COMPILING</span>
                 </div>
               </div>
             </div>
